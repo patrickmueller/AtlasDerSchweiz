@@ -1,0 +1,270 @@
+/*  Buttons and Menues  */
+
+.button,
+.group {
+	display: block;
+	width: 48px;
+	height: 50px;
+	background-color: #FFF;
+	border: 1px #b2b2b2 solid;
+	margin: 15px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+	background-size: 50px !important;
+}
+
+a.button {
+	color: #323232;
+	text-decoration: none;
+}
+
+.group {
+	height: auto;
+}
+
+.group .button {
+	border: none;
+	background: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	margin: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.group .button:after {
+	display: block;
+	content: "";
+	margin: 0 10px;
+	height: 1px;
+	border-top: 1px #b2b2b2 solid;
+}
+
+.group .button:first-child:after {
+	border-top: none;
+}
+
+
+
+.negative {
+	background-color: #333;
+	border: 1px #4c4c4c solid;
+}
+
+.group.negative .button:after {
+	border-top: 1px #4c4c4c solid;
+}
+
+
+
+
+/*  Icons  */
+
+.search {
+	background-image: url('/img/icon-02.png') !important;
+	background-position: center !important;
+}
+
+.legend {
+	background-image: url('/img/icon-03.png') !important;
+	background-position: center !important;
+}
+
+.map-options {
+	background-image: url('/img/icon-04.png') !important;
+	background-position: center !important;
+}
+
+.main-menu {
+	background-image: url('/img/icon-05.png') !important;
+	background-position: center !important;
+}
+
+.toolbox-open {
+	background-image: url('/img/icon-06.png') !important;
+	background-position: center !important;
+}
+
+.add {
+	background-image: url('/img/icon-07.png') !important;
+	background-position: center !important;
+}
+
+.swiss {
+	background-image: url('/img/icon-08.png') !important;
+	background-position: center !important;
+}
+
+.back {
+	background-image: url('/img/icon-09.png') !important;
+	background-position: center !important;
+}
+
+.map {
+	background-image: url('/img/icon-10.png') !important;
+	background-position: center !important;
+}
+
+.project-overview {
+	background-image: url('/img/icon-11.png') !important;
+	background-position: center !important;
+}
+
+.settings {
+	background-image: url('/img/icon-12.png') !important;
+	background-position: center !important;
+}
+
+.help {
+	background-image: url('/img/icon-13.png') !important;
+	background-position: center !important;
+}
+
+.intro {
+	background-image: url('/img/icon-14.png') !important;
+	background-position: center !important;
+}
+
+.impress {
+	background-image: url('/img/icon-14.png') !important;
+	background-position: center !important;
+}
+
+.economy {
+	background-image: url('/img/icon-25.png') !important;
+	background-position: center !important;
+}
+
+.politic {
+	background-image: url('/img/icon-26.png') !important;
+	background-position: center !important;
+}
+
+.traffic {
+	background-image: url('/img/icon-27.png') !important;
+	background-position: center !important;
+}
+
+.nature {
+	background-image: url('/img/icon-28.png') !important;
+	background-position: center !important;
+}
+
+.energy {
+	background-image: url('/img/icon-29.png') !important;
+	background-position: center !important;
+}
+
+.society {
+	background-image: url('/img/icon-30.png') !important;
+	background-position: center !important;
+}
+
+
+
+
+.negative .search {
+	background-image: url('/img/icon-neg-02.png') !important;
+	background-position: center !important;
+}
+
+.negative .legend {
+	background-image: url('/img/icon-neg-03.png') !important;
+	background-position: center !important;
+}
+
+.negative .map-options {
+	background-image: url('/img/icon-neg-04.png') !important;
+	background-position: center !important;
+}
+
+.negative .main-menu {
+	background-image: url('/img/icon-neg-05.png') !important;
+	background-position: center !important;
+}
+
+.negative .toolbox-open {
+	background-image: url('/img/icon-neg-06.png') !important;
+	background-position: center !important;
+}
+
+.negative .add {
+	background-image: url('/img/icon-neg-07.png') !important;
+	background-position: center !important;
+}
+
+.negative .swiss {
+	background-image: url('/img/icon-neg-08.png') !important;
+	background-position: center !important;
+}
+
+.negative .back {
+	background-image: url('/img/icon-neg-09.png') !important;
+	background-position: center !important;
+}
+
+.negative .map {
+	background-image: url('/img/icon-neg-10.png') !important;
+	background-position: center !important;
+}
+
+.negative .project-overview {
+	background-image: url('/img/icon-neg-11.png') !important;
+	background-position: center !important;
+}
+
+.negative .settings {
+	background-image: url('/img/icon-neg-12.png') !important;
+	background-position: center !important;
+}
+
+.negative .help {
+	background-image: url('/img/icon-neg-13.png') !important;
+	background-position: center !important;
+}
+
+.negative .intro {
+	background-image: url('/img/icon-neg-14.png') !important;
+	background-position: center !important;
+}
+
+.negative .impress {
+	background-image: url('/img/icon-neg-14.png') !important;
+	background-position: center !important;
+}
+
+.negative .economy {
+	background-image: url('/img/icon-neg-25.png') !important;
+	background-position: center !important;
+}
+
+.negative .politic {
+	background-image: url('/img/icon-neg-26.png') !important;
+	background-position: center !important;
+}
+
+.negative .traffic {
+	background-image: url('/img/icon-neg-27.png') !important;
+	background-position: center !important;
+}
+
+.negative .nature {
+	background-image: url('/img/icon-neg-28.png') !important;
+	background-position: center !important;
+}
+
+.negative .energy {
+	background-image: url('/img/icon-neg-29.png') !important;
+	background-position: center !important;
+}
+
+.negative .society {
+	background-image: url('/img/icon-neg-30.png') !important;
+	background-position: center !important;
+}

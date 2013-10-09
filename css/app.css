@@ -1,0 +1,136 @@
+html, body {
+	font-family: 'Roboto Slab', serif;
+}
+
+
+
+
+/*  Map Structure  */
+
+#map_canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+#group-left-1 {
+	position: absolute;
+	left: 0px;
+	top: 0;
+	-webkit-transition: all 300ms;
+}
+
+#group-left-2 {
+	position: absolute;
+	left: 0px;
+	top: 65px;
+	-webkit-transition: all 300ms;
+}
+
+#group-right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-transition: all 300ms;
+}
+
+.menu {
+	width: 342px;
+	height: 100%;
+	background-color: #FFF;
+	border-left: 1px #FFF solid;
+	/*
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+	*/
+}
+
+.menu img {
+	width: 342px;
+}
+
+.button-open-left {
+	left: 327px !important;
+	-webkit-transition: all 300ms;
+}
+
+.menu-open-left {
+	left: 0 !important;
+	-webkit-transition: all 300ms;
+}
+
+.button-open-left .button,
+.button-open-left .group {
+	-moz-border-radius: 0px 3px 3px 0px !important;
+	-webkit-border-radius: 0px 3px 3px 0px !important;
+	border-radius: 0px 3px 3px 0px !important;
+}
+
+.button-open-right {
+	right: 327px !important;
+	-webkit-transition: all 300ms;
+}
+
+.menu-open-right {
+	right: 0 !important;
+	-webkit-transition: all 300ms;
+}
+
+.button-open-right .button,
+.button-open-right .group {
+	-moz-border-radius: 3px 0px 0px 3px !important;
+	-webkit-border-radius: 3px 0px 0px 3px !important;
+	border-radius: 3px 0px 0px 3px !important;
+}
+
+#main-menu {
+	position: absolute;
+	left: -343px;
+	top: 0;
+	z-index: 100;
+	-webkit-transition: all 300ms;
+}
+
+#topic-menu {
+	position: absolute;
+	left: -343px;
+	top: 0;
+	z-index: 100;
+	background-color: #333;
+	border-left: 1px #4c4c4c solid;
+	-webkit-transition: all 300ms;
+}
+
+#option-menu {
+	position: absolute;
+	right: -343px;
+	top: 0;
+	z-index: 100;
+	-webkit-transition: all 300ms;
+}
+
+
+
+
+/*  TOPIC MENU  */
+#topic-menu,
+#topic-menu a {
+	color: #E5E5E5;
+	font-size: 17px;
+	font-weight: 100;
+	text-decoration: none;
+}
+
+#topic-menu ul,
+#topic-menu li {
+	list-style: none;
+}
+
+#topic-menu li a {
+	display: block;
+	height: 50px;
+}

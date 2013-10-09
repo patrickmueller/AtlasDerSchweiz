@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=0.5">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<title>Atlas der Schweiz</title>
+
+	<link rel="stylesheet" href="/css/normalize.css" class="css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='font/woff'>
+	<link rel="stylesheet" href="/css/framework.css" class="css">
+	<link rel="stylesheet" href="/css/app.css" class="css">
+
+</head>
+<body>
+
+	<!--
+	<div id ="panel">
+		<input type="button" value="Toggle visibility" onclick="overlay.toggle();"></input>
+		<input type="button" value="Toggle DOM attachment" onclick="overlay.toggleDOM();"></input>
+	</div>
+	-->
+
+	<div id="map_canvas"></div>
+
+
+
+	<div id="group-left-1" data-alignment="left">
+		<div>
+			<a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
+		</div>
+	</div>
+	<div id="main-menu" class="menu"></div>
+
+
+	<div id="group-left-2"  data-alignment="left">
+		<div class="group negative">
+			<a id="button" data-menu-id="topic-menu" href="" class="button nature"></a>
+			<a id="button" data-menu-id="topic-menu" href="" class="button energy"></a>
+			<a id="button" data-menu-id="topic-menu" href="" class="button add"></a>
+		</div>
+	</div>
+
+	<div id="topic-menu" class="menu" ng-controller="TopicCtrl">
+		<ul>
+			<li ng-repeat="blabla in natures">
+				<a href="">{{blabla.text}}</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<div ng-controller="OptionsCtrl">
+		<div id="group-right" data-alignment="right">
+			<div class="group">
+				<a ng-click="search()" href="" data-menu-id="option-menu" class="button search"></a>
+				<a ng-click="legend()" href="" data-menu-id="option-menu" class="button legend"></a>
+				<a ng-click="options()" href="" data-menu-id="option-menu" class="button map-options"></a>
+			</div>
+		</div>
+
+		<div id="option-menu" class="menu">
+			<img src="{{image}}" alt="">
+		</div>
+	</div>
+
+
+
+	
+
+	
+
+	<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script>
+	<script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.0-rc.2/angular-route.min.js"></script>
+	<script src="js/ng-script.js" type="text/javascript"></script>
+	<script src="js/map.js" type="text/javascript"></script>
+	<script src="js/navigation.js" type="text/javascript"></script>
+
+</body>
+</html>
