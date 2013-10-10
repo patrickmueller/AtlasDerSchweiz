@@ -1,11 +1,11 @@
-$(document).ready(function() {
+function navigationControl() {
 
 	$('.button').click(menuControl);
 	$('#map_canvas').click(function() {
 		if($('.active').length > 0) menuControl();
 	});
 
-});
+};
 
 function menuControl() {
 

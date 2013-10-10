@@ -15,8 +15,10 @@ angular.module('ngView', ['ngRoute']).config(function($routeProvider, $locationP
   });
 
   $routeProvider.when('/', {
-    templateUrl: 'home.html',
-    controller: MainCntl
+    //templateUrl: 'home.html',
+    templateUrl: 'map.html',
+    //controller: MainCntl,
+    controller: MapCntl
   });
  
   // configure html5 to get links working on jsfiddle
@@ -52,5 +54,7 @@ function ProjectCntl($scope, $routeParams) {
 }
  
 function MapCntl($scope, $routeParams) {
+  initialize();
+  navigationControl();
 }
 
