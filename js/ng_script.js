@@ -25,7 +25,6 @@ angular.module('ngView', ['ngRoute']).config(function($routeProvider, $locationP
   $locationProvider.html5Mode(true);
 });
 
-
 function MainCntl($scope, $routeParams) {
     $scope.projects = [
     {'title': 'Projektübersicht',
@@ -46,11 +45,11 @@ function ProjectCntl($scope, $routeParams) {
   $scope.maps = [
     {'title': 'Kartenübersicht',
       'name': 'Map 1',
-     'image': '/img/icon-04.png'},
+     'image': '/img/start/map_01.png'},
     {'name': 'Map 2',
-     'image': '/img/icon-05.png'},
+     'image': '/img/start/map_02.png'},
     {'name': 'Map 3',
-     'image': '/img/icon-06.png'}
+     'image': '/img/start/map_03.png'}
   ];
   navigationControl();
 }

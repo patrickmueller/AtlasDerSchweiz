@@ -1,21 +1,27 @@
 <link rel="stylesheet" href="/css/startscreen.css" class="css">
 
-<div id="group-left-1" data-alignment="left">
-  <div>
-    <a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
+  <div id="group-left-1" data-alignment="left">
+    <div>
+      <a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
+    </div>
   </div>
-</div>
-<div id="main-menu" class="menu"></div>
+  <div id="main-menu" class="menu"></div>
 
 <h1>Projektübersicht</h1>
 
 <div id = "logo">
-	<a href="map"><img src="/img/start/logo.png"></a>
+	<a href="#"><img src="/img/start/logo.png"></a>
 </div>
 
-<a href="#"><img src="/img/icon-21.png" id="add_button"></a>
+<div id = "start_options">
+	<ul>
+		<li>
+			<a href="map"><img src="/img/icon-21.png" class="add_button"></a>
+		</li>
+	</ul>
+</div>
 
-<div id ="projects" >
+<div id ="items" >
 	<ul>
 		<li ng-repeat="project in projects">
 			<a href="projects/{{project.name}}"><img ng-src="{{project.image}}"></a>
