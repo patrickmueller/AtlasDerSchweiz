@@ -1,5 +1,7 @@
 html, body {
 	font-family: 'Roboto Slab', serif;
+	width: 2048px;
+	position: fixed;
 }
 
 h1 {
@@ -10,21 +12,32 @@ h1 {
 }
 
 #logo img{
-	position: absolute;
+	position: fixed;
 	right: 15px;
+	width: 143px;
 	top: 15px;
 
 }
 #projects{
 	position: absolute;
-	top: 300px;
+	top: 250px;
 	left: 15px;
 	display: block;
+	width: auto;
 	height: 500px;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
 #projects ul{
+	position: fixed;
 	list-style-type: none;
+	width: 1500px;
+	height: 500px;
+}
+
+#projects li {
+	float: left;
 }
 
 #projects ul li { 
@@ -37,6 +50,8 @@ h1 {
 
 #projects ul li a {
 	display: block;
+	text-decoration: none;
+	color: black;
 	opacity: 0.75;
 	-webkit-transition: all 0.3s linear;
 	-moz-transition: all 0.3s linear;
@@ -44,5 +59,12 @@ h1 {
 }
 
 #projects ul li a img{
-	width: 730px;
+	width: 365px;
+}
+
+#add_button{
+	position: fixed;
+	right: 15px;
+	top: 110px;
+	width:50px;
 }
