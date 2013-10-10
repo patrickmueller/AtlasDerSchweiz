@@ -34,6 +34,8 @@ function menuControl() {
 		$('.button-open-left').removeClass('button-open-left');
 		$('.menu-open-right').removeClass('menu-open-right');
 		$('.button-open-right').removeClass('button-open-right');
+		$('.menu-open-bottom').removeClass('menu-open-bottom');
+		$('.button-open-bottom').removeClass('button-open-bottom');
 		$('.active').removeClass('active');
 	}
 
@@ -41,6 +43,9 @@ function menuControl() {
 		if(menuAlignment == 'left') {
 			$('#' + menuId).addClass('menu-open-left');
 			$('#' + groupId).addClass('button-open-left');
+		}else if(menuAlignment == 'bottom') {
+			$('#' + menuId).addClass('menu-open-bottom');
+			$('#' + groupId).addClass('button-open-bottom');
 		} else {
 			$('#' + menuId).addClass('menu-open-right');
 			$('#' + groupId).addClass('button-open-right');

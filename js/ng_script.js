@@ -15,10 +15,10 @@ angular.module('ngView', ['ngRoute']).config(function($routeProvider, $locationP
   });
 
   $routeProvider.when('/', {
-    templateUrl: 'home.html',
-    //templateUrl: 'map.html',
-    controller: MainCntl,
-    //controller: MapCntl
+    //templateUrl: 'home.html',
+    templateUrl: 'map.html',
+    //controller: MainCntl,
+    controller: MapCntl
   });
  
   // configure html5 to get links working on jsfiddle
@@ -56,7 +56,23 @@ function ProjectCntl($scope, $routeParams) {
 }
  
 function MapCntl($scope, $routeParams) {
+
   initialize();
   navigationControl();
+
+  $scope.image = '';
+
+  $scope.search = function() {
+    $scope.image = 'img/map_suche.png';
+  };
+
+  $scope.legend = function() {
+    $scope.image = 'img/map_legende.png';
+  };
+
+  $scope.options = function() {
+    $scope.image = 'img/map_basiskartenoptionen.png';
+  };
+
 }
 
