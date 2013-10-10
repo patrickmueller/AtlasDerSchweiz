@@ -268,3 +268,106 @@ a.button {
 	background-image: url('/img/icon-neg-30.png') !important;
 	background-position: center !important;
 }
+
+
+
+
+.search.active {
+	background-image: url('/img/icon-act-02.png') !important;
+	background-position: center !important;
+}
+
+.legend.active {
+	background-image: url('/img/icon-act-03.png') !important;
+	background-position: center !important;
+}
+
+.map-options.active {
+	background-image: url('/img/icon-act-04.png') !important;
+	background-position: center !important;
+}
+
+.main-menu.active {
+	background-image: url('/img/icon-act-05.png') !important;
+	background-position: center !important;
+}
+
+.toolbox-open.active {
+	background-image: url('/img/icon-act-06.png') !important;
+	background-position: center !important;
+}
+
+.add.active {
+	background-image: url('/img/icon-act-07.png') !important;
+	background-position: center !important;
+}
+
+.swiss.active {
+	background-image: url('/img/icon-act-08.png') !important;
+	background-position: center !important;
+}
+
+.back.active {
+	background-image: url('/img/icon-act-09.png') !important;
+	background-position: center !important;
+}
+
+.map.active {
+	background-image: url('/img/icon-act-10.png') !important;
+	background-position: center !important;
+}
+
+.project-overview.active {
+	background-image: url('/img/icon-act-11.png') !important;
+	background-position: center !important;
+}
+
+.settings.active {
+	background-image: url('/img/icon-act-12.png') !important;
+	background-position: center !important;
+}
+
+.help.active {
+	background-image: url('/img/icon-act-13.png') !important;
+	background-position: center !important;
+}
+
+.intro.active {
+	background-image: url('/img/icon-act-14.png') !important;
+	background-position: center !important;
+}
+
+.impress.active {
+	background-image: url('/img/icon-act-14.png') !important;
+	background-position: center !important;
+}
+
+.economy.active {
+	background-image: url('/img/icon-act-25.png') !important;
+	background-position: center !important;
+}
+
+.politic.active {
+	background-image: url('/img/icon-act-26.png') !important;
+	background-position: center !important;
+}
+
+.traffic.active {
+	background-image: url('/img/icon-act-27.png') !important;
+	background-position: center !important;
+}
+
+.nature.active {
+	background-image: url('/img/icon-act-28.png') !important;
+	background-position: center !important;
+}
+
+.energy.active {
+	background-image: url('/img/icon-act-29.png') !important;
+	background-position: center !important;
+}
+
+.society.active {
+	background-image: url('/img/icon-act-30.png') !important;
+	background-position: center !important;
+}

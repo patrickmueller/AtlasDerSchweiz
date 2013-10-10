@@ -1,0 +1,49 @@
+<!--
+<div id ="panel">
+	<input type="button" value="Toggle visibility" onclick="overlay.toggle();"></input>
+	<input type="button" value="Toggle DOM attachment" onclick="overlay.toggleDOM();"></input>
+</div>
+-->
+
+<div id="map_canvas"></div>
+
+
+
+<div id="group-left-1" data-alignment="left">
+	<div>
+		<a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
+	</div>
+</div>
+<div id="main-menu" class="menu"></div>
+
+
+<div id="group-left-2"  data-alignment="left">
+	<div class="group negative">
+		<a id="button" data-menu-id="topic-menu" href="" class="button nature"></a>
+		<a id="button" data-menu-id="topic-menu" href="" class="button energy"></a>
+		<a id="button" data-menu-id="topic-menu" href="" class="button add"></a>
+	</div>
+</div>
+
+<div id="topic-menu" class="menu" ng-controller="TopicCtrl">
+	<ul>
+		<li ng-repeat="blabla in natures">
+			<a href="">{{blabla.text}}</a>
+		</li>
+	</ul>
+</div>
+
+
+<div ng-controller="OptionsCtrl">
+	<div id="group-right" data-alignment="right">
+		<div class="group">
+			<a ng-click="search()" href="" data-menu-id="option-menu" class="button search"></a>
+			<a ng-click="legend()" href="" data-menu-id="option-menu" class="button legend"></a>
+			<a ng-click="options()" href="" data-menu-id="option-menu" class="button map-options"></a>
+		</div>
+	</div>
+
+	<div id="option-menu" class="menu">
+		<img src="{{image}}" alt="">
+	</div>
+</div>

@@ -42,6 +42,7 @@ html, body {
 	height: 100%;
 	background-color: #FFF;
 	border-left: 1px #FFF solid;
+	z-index: 100;
 	/*
 	-webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
@@ -54,6 +55,7 @@ html, body {
 }
 
 .button-open-left {
+	z-index: 99;
 	left: 327px !important;
 	-webkit-transition: all 300ms;
 }
@@ -71,6 +73,7 @@ html, body {
 }
 
 .button-open-right {
+	z-index: 99;
 	right: 327px !important;
 	-webkit-transition: all 300ms;
 }
@@ -91,7 +94,6 @@ html, body {
 	position: absolute;
 	left: -343px;
 	top: 0;
-	z-index: 100;
 	-webkit-transition: all 300ms;
 }
 
@@ -99,7 +101,6 @@ html, body {
 	position: absolute;
 	left: -343px;
 	top: 0;
-	z-index: 100;
 	background-color: #333;
 	border-left: 1px #4c4c4c solid;
 	-webkit-transition: all 300ms;
@@ -109,8 +110,17 @@ html, body {
 	position: absolute;
 	right: -343px;
 	top: 0;
-	z-index: 100;
 	-webkit-transition: all 300ms;
+}
+
+#shield {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	background-color: red;
 }
 
 
