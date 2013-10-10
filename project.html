@@ -1,9 +1,15 @@
-<div id="title">
-    <p>{{Jesus}}</p>
+  <div id="group-left-1" data-alignment="left">
+    <div>
+      <a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
+    </div>
   </div>
+  <div id="main-menu" class="menu"></div>
+
+<h1>Kartenübersicht</h1>
+
 <div id ="maps" >
 <li ng-repeat="map in maps">
-  <img ng-src="{{map.image}}">
+  <a href="projects/{{map.name}}"><img ng-src="{{map.image}}"></a>
   <a href="projects/{{project.name}}/map/{{map.name}}">{{map.name}}</a>
 </li>
 </div>
