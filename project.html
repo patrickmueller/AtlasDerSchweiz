@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/startscreen.css" class="css">
+
   <div id="group-left-1" data-alignment="left">
     <div>
       <a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
@@ -5,11 +7,32 @@
   </div>
   <div id="main-menu" class="menu"></div>
 
-<h1>Kartenübersicht</h1>
+<div id="back">
+	<a href="/"><img src="/img/icon-09.png" id="button_back"></a>
+	<h1>Kartenübersicht</h1>
+</div>
 
-<div id ="maps" >
-<li ng-repeat="map in maps">
-  <a href="projects/{{map.name}}"><img ng-src="{{map.image}}"></a>
-  <a href="projects/{{project.name}}/map/{{map.name}}">{{map.name}}</a>
-</li>
+<div id = "logo">
+	<a href="#"><img src="/img/start/logo.png"></a>
+</div>
+
+<div id = "start_options">
+	<ul>
+		<li>
+			<a href="map"><img src="/img/icon-19.png" class="diashow_button"></a>
+			<a href="map"><img src="/img/icon-20.png" class="edit_button"></a>
+			<a href="map"><img src="/img/icon-21.png" class="add_button"></a>
+		</li>
+	</ul>
+</div>
+
+<div id ="items" >
+	<ul>
+		<li ng-repeat="map in maps">
+			<a href="projects/{{map.name}}"><img ng-src="{{map.image}}"></a>
+			<!--<a href="projects/{{project.name}}/map/{{map.name}}">{{map.name}}</a>
+		-->
+			<a href="map">{{map.name}}</a>
+		</li>
+	</ul>
 </div>

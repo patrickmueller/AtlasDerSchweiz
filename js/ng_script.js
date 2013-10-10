@@ -25,7 +25,6 @@ angular.module('ngView', ['ngRoute']).config(function($routeProvider, $locationP
   $locationProvider.html5Mode(true);
 });
 
-
 function MainCntl($scope, $routeParams) {
     $scope.projects = [
     {'title': 'Projektübersicht',

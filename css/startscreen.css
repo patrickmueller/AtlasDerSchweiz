@@ -18,7 +18,7 @@ h1 {
 	top: 15px;
 
 }
-#projects{
+#items{
 	position: absolute;
 	top: 250px;
 	left: 15px;
@@ -29,18 +29,18 @@ h1 {
 	overflow-y: hidden;
 }
 
-#projects ul{
+#items ul{
 	position: fixed;
 	list-style-type: none;
 	width: 1500px;
 	height: 500px;
 }
 
-#projects li {
+#items li {
 	float: left;
 }
 
-#projects ul li { 
+#items ul li { 
 	list-style: none;
 	float: left;
 	padding: 0 10px 0 0;
@@ -48,7 +48,7 @@ h1 {
 	padding-bottom: 40px
 }
 
-#projects ul li a {
+#items ul li a {
 	display: block;
 	text-decoration: none;
 	color: black;
@@ -58,13 +58,26 @@ h1 {
 	transition: all 0.3s linear;
 }
 
-#projects ul li a img{
+#items ul li a img{
 	width: 365px;
 }
 
-#add_button{
+#back h1{
+	position: fixed;
+	left: 75px;
+}
+#back{
+	position: absolute;
+	top:93px;
+
+}
+#start_options ul li{
+	list-style: none;
 	position: fixed;
 	right: 15px;
 	top: 110px;
+}
+
+#start_options ul li img{
 	width:50px;
 }
