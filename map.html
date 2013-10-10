@@ -26,9 +26,10 @@
 </div>
 
 <div id="topic-menu" class="menu">
+	<h2 class="">{{topicTitle}}</h2>
 	<ul>
-		<li ng-repeat="blabla in natures">
-			<a href="">{{blabla.text}}</a>
+		<li ng-repeat="elements in topicList">
+			<a ng-click="changeTopic({{$index}})" href="">{{elements.name}}</a>
 		</li>
 	</ul>
 </div>
