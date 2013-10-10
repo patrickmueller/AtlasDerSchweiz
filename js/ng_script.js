@@ -38,6 +38,7 @@ function MainCntl($scope, $routeParams) {
       'name': 'Baumbestände',
      'image': 'img/start/projektuebersicht-02.png'}
   ];
+  navigationControl();
 }
  
 function ProjectCntl($scope, $routeParams) {
@@ -51,6 +52,7 @@ function ProjectCntl($scope, $routeParams) {
     {'name': 'Map 3',
      'image': '/img/icon-06.png'}
   ];
+  navigationControl();
 }
  
 function MapCntl($scope, $routeParams) {
