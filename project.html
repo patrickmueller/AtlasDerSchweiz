@@ -7,9 +7,10 @@
   </div>
   <div id="main-menu" class="menu"></div>
 
-<div id="back">
+<div ng-repeat="project in projects" id="back">
 	<a href="/"><img src="/img/icon-09.png" id="button_back"></a>
-	<h1>Kartenübersicht</h1>
+	<h1>Hier Project name</h1>
+	<!--	<h1>{{project.name}}</h1> -->
 </div>
 
 <div id = "logo">
@@ -19,9 +20,9 @@
 <div id = "start_options">
 	<ul>
 		<li>
-			<a href="map"><img src="/img/icon-19.png" class="diashow_button"></a>
-			<a href="map"><img src="/img/icon-20.png" class="edit_button"></a>
-			<a href="map"><img src="/img/icon-21.png" class="add_button"></a>
+			<a href="/map"><img src="/img/icon-19.png" class="diashow_button"></a>
+			<a href="/map"><img src="/img/icon-20.png" class="edit_button"></a>
+			<a href="/map"><img src="/img/icon-21.png" class="add_button"></a>
 		</li>
 	</ul>
 </div>
@@ -29,10 +30,11 @@
 <div id ="items" >
 	<ul>
 		<li ng-repeat="map in maps">
-			<a href="projects/{{map.name}}"><img ng-src="{{map.image}}"></a>
+			<a href="/map"><img ng-src="{{map.image}}"></a>
 			<!--<a href="projects/{{project.name}}/map/{{map.name}}">{{map.name}}</a>
 		-->
-			<a href="map">{{map.name}}</a>
+			<a href="/map">{{map.name}}</a>
+			
 		</li>
 	</ul>
 </div>
