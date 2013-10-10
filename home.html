@@ -1,0 +1,15 @@
+  <div id="group-left-1" data-alignment="left">
+    <div>
+      <a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
+    </div>
+  </div>
+  <div id="main-menu" class="menu"></div>
+
+<h1> Projektübersicht </h1>
+
+<div id ="projects" >
+<li ng-repeat="project in projects">
+  <img ng-src="{{project.image}}">
+  <a href="projects/{{project.name}}">{{project.name}}</a>
+</li>
+</div>
