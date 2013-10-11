@@ -63,10 +63,10 @@ function MapCntl($scope, $routeParams, $http, $templateCache) {
   $scope.topics = null;
   $scope.topicList = null;
   $scope.topicTitle = 'Themen';
-  $scope.topicIndex2 = null;
-  $scope.topicIndexCrumbs = new Array();;
+  $scope.topicIndexCrumbs = new Array();
+  $scope.topicLastFlag = false;
   
-  $.getJSON('http://atlas.dev/json/topics.json', function(json) {
+  $.getJSON('/json/topics.json', function(json) {
       console.log(json);
       $scope.$apply(function(){
           $scope.topics = json;
@@ -76,37 +76,44 @@ function MapCntl($scope, $routeParams, $http, $templateCache) {
 
   $scope.changeTopic = function(index) {
 
-    $scope.topicIndexCrumbs.push(index);
-    var i = $scope.topicIndexCrumbs;
+    if(!$scope.topicLastFlag) {
 
-    if(i.length == 1) {
-      $scope.topicList = $scope.topics[i[0]]['children'];
-      $scope.topicTitle  = $scope.topics[i[0]]['name'];
-    }
+      if(index != null)
+        $scope.topicIndexCrumbs.push(index);
+      var thisTopic = $scope.topics;
+      var x = $scope.topicIndexCrumbs;
+      var length = $scope.topicIndexCrumbs.length;
 
-    if(i.length == 2) {
-      $scope.topicList = $scope.topics[i[0]]['children'][i[1]]['children'];
-      $scope.topicTitle  = $scope.topics[i[0]]['children'][i[1]]['name'];
-    }
+      if(length > 0) {
 
-    if(i.length == 3) {
-      $scope.topicList = $scope.topics[i[0]]['children'][i[1]]['children'][i[2]]['children'];
-      $scope.topicTitle  = $scope.topics[i[0]]['children'][i[1]]['children'][i[2]]['title_long'];
-    }
+        for (var i = 0; i <= length - 1; i++) {
+          thisTopic = thisTopic[x[i]];
+          $scope.topicTitle = thisTopic['name'];
+          thisTopic = thisTopic['children'];
+          $scope.topicList = thisTopic;
+          if(thisTopic[0]['title_long']) {
+            $scope.topicLastFlag = true;
+          }
+        };
 
-/*
+      } else {
+        $scope.topicList = $scope.topics;
+        $scope.topicTitle = 'Themen';
+      }
 
-    console.log(index);
-
-    if(index2 != '') {
-      $scope.topicList = $scope.topics[index2]['children'][index]['children'];
-      $scope.topicTitle  = $scope.topics[index2]['children'][index]['name'];
     } else {
-      $scope.topicList = $scope.topics[index]['children'];
-      $scope.topicTitle  = $scope.topics[index]['name'];
-      $scope.topicIndex2 = index;
+
+      console.log($scope.topicList[index]['name']);
+
     }
-    */
+
+  }
+
+  $scope.changeTopicBack = function() {
+
+    $scope.topicLastFlag = false;
+    $scope.topicIndexCrumbs.pop();
+    $scope.changeTopic(null);
 
   }
 

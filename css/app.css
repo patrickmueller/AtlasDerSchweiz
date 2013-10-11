@@ -162,6 +162,7 @@ html, body {
 	position: absolute;
 	left: -343px;
 	top: 0;
+	padding-top: 34px;
 	background-color: #333;
 	border-left: 1px #4c4c4c solid;
 	-webkit-transition: all 300ms;
@@ -171,18 +172,36 @@ html, body {
 #topic-menu a {
 	color: #E5E5E5;
 	font-size: 17px;
+	line-height: 20px;
 	font-weight: 200;
 	text-decoration: none;
+}
+
+#topic-menu h2 {
+	margin: 0 0 20px 0;
+}
+
+#topic-menu h2 a {
+	font-size: 22px;
+	margin-left: 57px;
 }
 
 #topic-menu ul,
 #topic-menu li {
 	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#topic-menu li {
+	border: none !important;
 }
 
 #topic-menu li a {
 	display: block;
-	height: 50px;
+	background-repeat: no-repeat;
+	background-size: 35px !important;
+	padding: 15px 0 15px 57px;
+	background-position: 10px 5px !important;
 }
 
 #topic-menu img {
