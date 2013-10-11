@@ -3,9 +3,6 @@ html, body {
 }
 
 h1 {
-	position: absolute;
-	margin: 15px;
-	top: 100px;
 	font-size: 25pt;
 	font-weight: 300;
 }
@@ -13,6 +10,16 @@ h1 {
 p {
 	font-size: 18;
 	font-weight: 300;
+}
+
+.clear {
+	clear: both;
+}
+
+#title{
+	margin: 15px;
+	padding-top: 110px
+
 }
 
 #logo img{
@@ -23,18 +30,20 @@ p {
 
 }
 #items{
-	position: absolute;
 	top: 250px;
 	left: 15px;
 	display: block;
-	width: auto;
+	width: 1024px;
 	height: 500px;
+}
+
+#scroller{
+	width:auto;
 	overflow-x: scroll;
 	overflow-y: hidden;
 }
 
 #items ul{
-	position: fixed;
 	left: -24px;
 	list-style-type: none;
 	width: 1500px;
@@ -67,16 +76,22 @@ p {
 	width: 365px;
 }
 
-#back h1{
-	position: fixed;
-	left: 50px;
+#back {
+	padding-top:110px;
+	padding-left: 15px;
+	margin: 15px;
 }
-#back{
-	position: absolute;
-	top:93px;
-	left: -12px
 
+#back #button_back{
+	float: left;
+	margin-left: -24px;
 }
+
+
+#start_options {
+	width:200px;
+}
+
 #start_options ul li{
 	list-style: none;
 	position: fixed;
@@ -86,4 +101,31 @@ p {
 
 #start_options ul li img{
 	width:50px;
+}
+
+#main-menu a{
+	font-weight: 300;
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+	line-height: 50px;
+}
+
+#main-menu ul li{
+	list-style: none;
+}
+
+#main-menu ul li img{
+	width: 50px;
+	float: left;
+}
+
+#main-menu #selected a{
+	color: #00A3B9;
+}
+
+#main-menu #specific a{
+	color: black;
+	font-size: 15px;
+	padding-left: 45px;
 }

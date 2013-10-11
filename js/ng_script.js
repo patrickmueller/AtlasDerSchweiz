@@ -15,10 +15,10 @@ angular.module('ngView', ['ngRoute']).config(function($routeProvider, $locationP
   });
 
   $routeProvider.when('/', {
-    //templateUrl: 'home.html',
-    templateUrl: 'map.html',
-    //controller: MainCntl,
-    controller: MapCntl
+    templateUrl: 'home.html',
+    //templateUrl: 'map.html',
+    controller: MainCntl,
+    //controller: MapCntl
   });
  
   // configure html5 to get links working on jsfiddle
@@ -27,21 +27,18 @@ angular.module('ngView', ['ngRoute']).config(function($routeProvider, $locationP
 
 function MainCntl($scope, $routeParams) {
     $scope.projects = [
-    {'title': 'Projektübersicht',
-      'name': 'Eiszeit in der Schweiz',
+    {'name': 'Eiszeit in der Schweiz',
      'image': 'img/start/projektuebersicht-02.png'},
-    {'title': 'Projektübersicht',
-      'name': 'Alpenpanorama',
+    {'name': 'Alpenpanorama',
      'image': 'img/start/projektuebersicht-03.png'},
-    {'title': 'Projektübersicht',
-      'name': 'Baumbestände',
+    {'name': 'Baumbestände',
      'image': 'img/start/projektuebersicht-02.png'}
   ];
   navigationControl();
 }
  
 function ProjectCntl($scope, $routeParams) {
-  console.log('yep!');
+  console.log($routeParams);
   $scope.maps = [
     {'title': 'Kartenübersicht',
       'name': 'Map 1',
@@ -52,6 +49,8 @@ function ProjectCntl($scope, $routeParams) {
      'image': '/img/start/map_03.png'}
   ];
   navigationControl();
+  $scope.title = $routeParams['projectId'];
+
 }
  
 function MapCntl($scope, $routeParams, $http, $templateCache) {

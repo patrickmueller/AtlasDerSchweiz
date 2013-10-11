@@ -1,13 +1,23 @@
+<link rel="stylesheet" href="/css/startscreen.css" class="css">
 
+	<div id="group-left-1" data-alignment="left">
+		<div>
+			<a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
+		</div>
+	</div>
+	<div id="main-menu" class="menu">
+		<ul>
+			<li id="selected"><a href="#"><img src="/img/icon-act-11.png">Projektübersicht</a></li>
+			<li id="general"><a href="#"><img src="/img/icon-12.png">Einstellungen</a></li>
+			<li id="general"><a href="#"><img src="/img/icon-13.png">Hilfe</a></li>
+			<li id="general"><a href="#"><img src="/img/icon-14.png">Kurzeinführung</a></li>
+			<li id="general"><a href="#"><img src="/img/icon-15.png">Impressum</a></li>
+		</ul>
+</div>
 
-  <div id="group-left-1" data-alignment="left">
-    <div>
-      <a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
-    </div>
-  </div>
-  <div id="main-menu" class="menu"></div>
-
-<h1>Projektübersicht</h1>
+<div id="title">
+	<h1>Projektübersicht</h1>
+</div>
 
 <div id = "logo">
 	<a href="#"><img src="/img/start/logo.png"></a>
@@ -22,10 +32,12 @@
 </div>
 
 <div id ="items" >
-	<ul>
-		<li ng-repeat="project in projects">
-			<a href="projects/{{project.name}}"><img ng-src="{{project.image}}"></a>
-			<a href="projects/{{project.name}}">{{project.name}}</a>
-		</li>
-	</ul>
+	<div id="scroller">
+		<ul>
+			<li ng-repeat="project in projects">
+				<a href="projects/{{project.name}}"><img ng-src="{{project.image}}"></a>
+				<a href="projects/{{project.name}}">{{project.name}}</a>
+			</li>
+		</ul>
+	</div>
 </div>
