@@ -7,6 +7,7 @@ var atlasApp = angular.module('atlasApp', [
 
 atlasApp.config(['$routeProvider',
   function($routeProvider) {
+
     $routeProvider.when('/projects/:projectId', {
       templateUrl: '/project.html',
       controller: 'ProjectCntl',
@@ -23,10 +24,10 @@ atlasApp.config(['$routeProvider',
     });
 
     $routeProvider.when('/', {
-      //templateUrl: 'home.html',
-      templateUrl: 'map.html',
-      //controller: 'MainCntl',
-      controller: 'MapCntl'
+      templateUrl: 'home.html',
+      //templateUrl: 'map.html',
+      controller: 'MainCntl',
+      //controller: 'MapCntl'
     });
 
 }]);
@@ -71,8 +72,8 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
   function($scope, $routeParams, $http, $templateCache) {
 
     // outsourced functionality
-    navigationControl();
-    initialize();
+    
+    initialize('');
 
 
     // model data
@@ -171,6 +172,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
       // get topic
       var topic = $scope.topicList[index]['name'];
+      var overlay = $scope.topicList[index]['overlay'];
 
       // get topic icon
       var icon;
@@ -207,7 +209,8 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
         topic: topic,
         indexCrumbs: $scope.topicIndexCrumbs,
         iconClass: icon,
-        ctrlAction: 'viewTopic(' + index + ')'
+        ctrlAction: 'viewTopic(' + index + ')',
+        overlay: overlay
       };
 
       if($scope.topicOpen != null) {
@@ -217,6 +220,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
       }
 
       $scope.viewTopic(index);
+      $scope.loadOverlay(index);
 
       // add active class
       $('.active').removeClass('active');
@@ -229,6 +233,13 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
       $scope.topicOpen = index;
       $scope.topicIndexCrumbs = $scope.topicActiveTopics[index]['indexCrumbs'];
       $scope.navigateTopic(null);
+
+    }
+
+    $scope.loadOverlay = function(index) {
+
+      var overlay = $scope.topicActiveTopics[index]['overlay'];
+      initialize(overlay);
 
     }
 
@@ -245,6 +256,8 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
     $scope.options = function() {
       $scope.image = 'img/map_basiskartenoptionen.png';
     };
+
+    navigationControl();
 
 }]);
 

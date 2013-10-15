@@ -3,7 +3,8 @@ var overlay;
 	var markers = [];
 	var markerJa = false;
 USGSOverlay.prototype = new google.maps.OverlayView();
-function initialize() {
+
+function initialize(overlayImageSrc) {
 	var MY_MAPTYPE_ID = 'style';
 	var mapOptions = {
 			zoom: 9,
@@ -59,7 +60,11 @@ function initialize() {
 	var srcImage = '/img/overlay/Scene2_Wanderrouten.png';
 	var srcImage = '/img/overlay/Scene3_Egli.png';
 	var srcImage = '/img/overlay/Scene3_Waschbaer.png';
-	overlay = new USGSOverlay(bounds, srcImage, map);
+	if(overlayImageSrc != '') {
+		console.log(overlayImageSrc);
+		overlay = new USGSOverlay(bounds, overlayImageSrc, map);
+	}
+	
 }
 /** @constructor */
 function USGSOverlay(bounds, image, map) {
