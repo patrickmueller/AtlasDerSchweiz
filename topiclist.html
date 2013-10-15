@@ -1,0 +1,10 @@
+<div ng-controller="MapCntl">
+	<h2 class="negative">
+		<a ng-click="navigateTopicBack()" href="" class="{{topicBackIcon}}">{{div.topicTitle}}</a>
+	</h2>
+	<ul>
+		<li ng-repeat="elements in topicList" class="negative {{elements.class}}">
+			<a ng-click="navigateTopic({{$index}}, '{{topicAction}}')" href="" class="{{elements.icon}}">{{elements.name}}</a>
+		</li>
+	</ul>
+</div>

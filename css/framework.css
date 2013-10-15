@@ -132,7 +132,7 @@ a.button {
 }
 
 .impress {
-	background-image: url('/img/icon-14.png') !important;
+	background-image: url('/img/icon-15.png') !important;
 	background-position: center !important;
 }
 
@@ -235,7 +235,7 @@ a.button {
 }
 
 .negative .impress {
-	background-image: url('/img/icon-neg-14.png') !important;
+	background-image: url('/img/icon-neg-15.png') !important;
 	background-position: center !important;
 }
 
@@ -272,102 +272,122 @@ a.button {
 
 
 
-.search.active {
+.search.active,
+.selected .search {
 	background-image: url('/img/icon-act-02.png') !important;
 	background-position: center !important;
 }
 
-.legend.active {
+.legend.active,
+.selected .legend {
 	background-image: url('/img/icon-act-03.png') !important;
 	background-position: center !important;
 }
 
-.map-options.active {
+.map-options.active,
+.selected .map-options {
 	background-image: url('/img/icon-act-04.png') !important;
 	background-position: center !important;
 }
 
-.main-menu.active {
+.main-menu.active,
+.selected .main-menu {
 	background-image: url('/img/icon-act-05.png') !important;
 	background-position: center !important;
 }
 
-.toolbox-open.active {
+.toolbox-open.active,
+.selected .toolbox-open {
 	background-image: url('/img/icon-act-06.png') !important;
 	background-position: center !important;
 }
 
-.add.active {
+.add.active,
+.selected .add {
 	background-image: url('/img/icon-act-07.png') !important;
 	background-position: center !important;
 }
 
-.swiss.active {
+.swiss.active,
+.selected .swiss {
 	background-image: url('/img/icon-act-08.png') !important;
 	background-position: center !important;
 }
 
-.back.active {
+.back.active,
+.selected .back {
 	background-image: url('/img/icon-act-09.png') !important;
 	background-position: center !important;
 }
 
-.map.active {
+.map.active,
+.selected .map {
 	background-image: url('/img/icon-act-10.png') !important;
 	background-position: center !important;
 }
 
-.project-overview.active {
+.project-overview.active,
+.selected .project-overview {
 	background-image: url('/img/icon-act-11.png') !important;
 	background-position: center !important;
 }
 
-.settings.active {
+.settings.active,
+.selected .settings {
 	background-image: url('/img/icon-act-12.png') !important;
 	background-position: center !important;
 }
 
-.help.active {
+.help.active,
+.selected .help {
 	background-image: url('/img/icon-act-13.png') !important;
 	background-position: center !important;
 }
 
-.intro.active {
+.intro.active,
+.selected .intro {
 	background-image: url('/img/icon-act-14.png') !important;
 	background-position: center !important;
 }
 
-.impress.active {
-	background-image: url('/img/icon-act-14.png') !important;
+.impress.active,
+.selected .impress {
+	background-image: url('/img/icon-act-15.png') !important;
 	background-position: center !important;
 }
 
-.economy.active {
+.economy.active,
+.selected .economy {
 	background-image: url('/img/icon-act-25.png') !important;
 	background-position: center !important;
 }
 
-.politic.active {
+.politic.active,
+.selected .politic {
 	background-image: url('/img/icon-act-26.png') !important;
 	background-position: center !important;
 }
 
-.traffic.active {
+.traffic.active,
+.selected .traffic {
 	background-image: url('/img/icon-act-27.png') !important;
 	background-position: center !important;
 }
 
-.nature.active {
+.nature.active,
+.selected .nature {
 	background-image: url('/img/icon-act-28.png') !important;
 	background-position: center !important;
 }
 
-.energy.active {
+.energy.active,
+.selected .energy {
 	background-image: url('/img/icon-act-29.png') !important;
 	background-position: center !important;
 }
 
-.society.active {
+.society.active,
+.selected .society {
 	background-image: url('/img/icon-act-30.png') !important;
 	background-position: center !important;
 }

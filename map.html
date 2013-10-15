@@ -9,30 +9,61 @@
 
 
 
+
 <div id="group-left-1" data-alignment="left">
 	<div>
 		<a id="button" data-menu-id="main-menu" href="" class="button main-menu"></a>
 	</div>
 </div>
-<div id="main-menu" class="menu"></div>
+
+<div id="main-menu" class="menu">
+	<ul>
+		<li class="selected"><a class="back" href="#">Alpenpanorama</a></li>
+		<ul>
+			<li><a href="#">Als neue Karte speichern</a></li>
+			<li><a href="#">Karte zurücksetzen</a></li>
+		</ul>
+	</ul>
+	<ul>
+		<li><a class="map" href="#">Karten aus dem Projekt</a></li>
+		<ul>
+			<li><a href="#">Matterhorn</a></li>
+			<li><a href="#">Matterhorn</a></li>
+		</ul>
+	</ul>
+	<ul>
+		<li><a class="project-overview" href="/">Projektübersicht</a></li>
+		<li><a class="settings" href="/settings">Einstellungen</a></li>
+		<li><a class="help" href="/help">Hilfe</a></li>
+		<li><a class="intro" href="/intro">Kurzeinführung</a></li>
+		<li><a class="impress" href="/impress">Impressum</a></li>
+	</ul>
+</div>
+<div id="main-menu-shadow" class="shadow"></div>
 
 
-<div id="group-left-2"  data-alignment="left">
-	<div class="group negative">
-		<a id="button" data-menu-id="topic-menu" href="" class="button nature"></a>
-		<a id="button" data-menu-id="topic-menu" href="" class="button energy"></a>
-		<a id="button" data-menu-id="topic-menu" href="" class="button add"></a>
+
+
+<div id="group-left-2"  data-alignment="left" class="">
+	<div class="group negative ">
+		<a ng-repeat="topic in topicActiveTopics" ng-click="{{topic.ctrlAction}}" id="button" data-menu-id="topic-menu" href="" class="button {{topic.iconClass}}"></a>
+		<a ng-click="newTopic()" id="button" data-menu-id="topic-menu" href="" class="button add"></a>
 	</div>
 </div>
 
 <div id="topic-menu" class="menu">
-	<h2 class=""><a ng-click="changeTopicBack()" href="">{{topicTitle}}</a></h2>
+	<h2 class="negative">
+		<a ng-click="navigateTopicBack()" href="" class="{{topicBackIcon}}">{{topicTitle}}</a>
+	</h2>
 	<ul>
-		<li ng-repeat="elements in topicList" class="negative">
-			<a ng-click="changeTopic({{$index}})" href="" class="{{elements.icon}}">{{elements.name}}</a>
+		<li ng-repeat="elements in topicList" class="negative {{elements.class}}">
+			<a ng-click="navigateTopic({{$index}})" href="" class="{{elements.icon}}">{{elements.name}}</a>
 		</li>
 	</ul>
 </div>
+<div id="topic-menu-shadow" class="shadow"></div>
+
+
 
 
 <div id="group-right" data-alignment="right">
@@ -46,6 +77,9 @@
 <div id="option-menu" class="menu">
 	<img src="{{image}}" alt="">
 </div>
+<div id="option-menu-shadow" class="shadow"></div>
+
+
 
 
 <div id="group-bottom" data-alignment="bottom">
@@ -57,3 +91,4 @@
 <div id="toolbox-menu" class="menu">
 	<img src="" alt="">
 </div>
+<div id="toolbox-menu-shadow" class="shadow"></div>

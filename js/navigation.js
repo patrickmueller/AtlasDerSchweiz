@@ -1,13 +1,13 @@
 function navigationControl() {
 
-	$('.button').click(menuControl);
-	$('#map_canvas').click(function() {
-		if($('.active').length > 0) menuControl();
-	});
+	$(document).on('click', '.button', menuControl);
+	$('#map_canvas').click(menuControl);
 
 };
 
 function menuControl() {
+
+	console.log('click');
 
 	if($(this).attr('id') == 'map_canvas') {
 		closeMenu();
@@ -42,12 +42,15 @@ function menuControl() {
 	function openMenu() {
 		if(menuAlignment == 'left') {
 			$('#' + menuId).addClass('menu-open-left');
+			$('#' + menuId + '-shadow').addClass('menu-open-left');
 			$('#' + groupId).addClass('button-open-left');
 		}else if(menuAlignment == 'bottom') {
 			$('#' + menuId).addClass('menu-open-bottom');
+			$('#' + menuId + '-shadow').addClass('menu-open-bottom');
 			$('#' + groupId).addClass('button-open-bottom');
 		} else {
 			$('#' + menuId).addClass('menu-open-right');
+			$('#' + menuId + '-shadow').addClass('menu-open-right');
 			$('#' + groupId).addClass('button-open-right');
 		}
 	}

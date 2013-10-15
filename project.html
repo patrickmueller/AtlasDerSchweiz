@@ -7,16 +7,19 @@
 </div>
 <div id="main-menu" class="menu">
 	<ul>
-		<li id="selected"><a href="#"><img src="/img/icon-act-10.png">{{title}}</p></a></li>
-		<li id="specific"><a href="#">Projekteinstellungen</a></li>
-		<li id="specific"><a href="#">Mitarbeiter zu Projekt einladen</a></li>
-		<li id="specific"><a href="#">Projekt löschen</a></li>
-
-		<li id="general"><a href="/"><img src="/img/icon-11.png">Projektübersicht</a></li>
-		<li id="general"><a href="#"><img src="/img/icon-12.png">Einstellungen</a></li>
-		<li id="general"><a href="#"><img src="/img/icon-13.png">Hilfe</a></li>
-		<li id="general"><a href="#"><img src="/img/icon-14.png">Kurzeinführung</a></li>
-		<li id="general"><a href="#"><img src="/img/icon-15.png">Impressum</a></li>
+		<li class="selected"><a class="back" href="#">{{title}}</a></li>
+		<ul>
+			<li><a href="#">Projekteinstellungen</a></li>
+			<li><a href="#">Mitarbeiter zu Projekt einladen</a></li>
+			<li><a href="#">Projekt löschen</a></li>
+		</ul>
+	</ul>
+	<ul>
+		<li><a class="project-overview" href="/">Projektübersicht</a></li>
+		<li><a class="settings" href="/settings">Einstellungen</a></li>
+		<li><a class="help" href="/help">Hilfe</a></li>
+		<li><a class="intro" href="/intro">Kurzeinführung</a></li>
+		<li><a class="impress" href="/impress">Impressum</a></li>
 	</ul>
 </div>
 

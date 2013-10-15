@@ -15,10 +15,10 @@ angular.module('ngView', ['ngRoute']).config(function($routeProvider, $locationP
   });
 
   $routeProvider.when('/', {
-    templateUrl: 'home.html',
-    //templateUrl: 'map.html',
-    controller: MainCntl,
-    //controller: MapCntl
+    //templateUrl: 'home.html',
+    templateUrl: 'map.html',
+    //controller: MainCntl,
+    controller: MapCntl
   });
  
   // configure html5 to get links working on jsfiddle
@@ -55,9 +55,12 @@ function ProjectCntl($scope, $routeParams) {
  
 function MapCntl($scope, $routeParams, $http, $templateCache) {
 
-  initialize();
+  // outsourced functionality
   navigationControl();
+  initialize();
 
+
+  // model data
   $scope.image = '';
 
   $scope.topics = null;
@@ -65,6 +68,11 @@ function MapCntl($scope, $routeParams, $http, $templateCache) {
   $scope.topicTitle = 'Themen';
   $scope.topicIndexCrumbs = new Array();
   $scope.topicLastFlag = false;
+  $scope.topicLastClass = '';
+  $scope.topicOpen = null;
+  $scope.topicAction = 'navigateTopic';
+  $scope.topicBackIcon = '';
+  $scope.topicActiveTopics = new Array();
   
   $.getJSON('/json/topics.json', function(json) {
       console.log(json);
@@ -74,46 +82,146 @@ function MapCntl($scope, $routeParams, $http, $templateCache) {
       });
   });
 
-  $scope.changeTopic = function(index) {
 
-    if(!$scope.topicLastFlag) {
 
-      if(index != null)
-        $scope.topicIndexCrumbs.push(index);
-      var thisTopic = $scope.topics;
-      var x = $scope.topicIndexCrumbs;
-      var length = $scope.topicIndexCrumbs.length;
 
-      if(length > 0) {
+  // topic menu actions
 
-        for (var i = 0; i <= length - 1; i++) {
+  $scope.navigateTopic = function(index) {
+
+    if(index != null)
+      $scope.topicIndexCrumbs.push(index);
+  
+    var thisTopic = $scope.topics;
+    var x = $scope.topicIndexCrumbs;
+    var length = x.length;
+    var setClass = false;
+    var actionIsComing = false;
+    $scope.topicAction = 'navigateTopic';
+
+    if(length > 0) {
+
+      for (var i = 0; i <= length - 1; i++) {
+
+          if(actionIsComing) {
+            if(index != null) {
+              console.log($scope.topicList);
+              $scope.addTopic(index);
+            } else {
+              setClass = true;
+              console.log('setClass');
+
+              var tmp = thisTopic;
+              tmp[x[i]]['class'] = 'selected';
+              thisTopic = tmp;
+              console.log(thisTopic);
+
+            }
+            break;
+          }
+
           thisTopic = thisTopic[x[i]];
           $scope.topicTitle = thisTopic['name'];
-          thisTopic = thisTopic['children'];
-          $scope.topicList = thisTopic;
-          if(thisTopic[0]['title_long']) {
-            $scope.topicLastFlag = true;
-          }
-        };
 
-      } else {
-        $scope.topicList = $scope.topics;
-        $scope.topicTitle = 'Themen';
-      }
+          thisTopic = thisTopic['children'];
+          
+
+          if(thisTopic[0]['title_long'])
+            actionIsComing = true;
+        
+      };
+      $scope.topicList = thisTopic;
+      $scope.topicBackIcon = 'back';
 
     } else {
+      $scope.topicList = $scope.topics;
+      $scope.topicTitle = 'Themen';
+      $scope.topicBackIcon = '';
+    }
 
-      console.log($scope.topicList[index]['name']);
+    if(setClass) {
+
+
 
     }
 
   }
 
-  $scope.changeTopicBack = function() {
+  $scope.navigateTopicBack = function() {
 
-    $scope.topicLastFlag = false;
+    //$scope.topicLastFlag = false;
     $scope.topicIndexCrumbs.pop();
-    $scope.changeTopic(null);
+    $scope.navigateTopic(null);
+
+  }
+
+  $scope.newTopic = function() {
+
+    $scope.topicOpen = null;
+    $scope.topicIndexCrumbs = [];
+    //$scope.topicLastFlag = false;
+    $scope.navigateTopic();
+
+  }
+
+  $scope.addTopic = function(index) {
+
+    // get topic
+    console.log($scope.topicList);
+    var topic = $scope.topicList[index]['name'];
+
+    // get topic icon
+    var icon;
+    var topic = $scope.topics[$scope.topicIndexCrumbs[0]]['name']
+    switch (topic) {
+      case 'Natur und Umwelt':
+        icon = 'nature';
+        break;
+      case 'Gesellschaft':
+        icon = 'society';
+        break;
+      case 'Wirtschaft':
+        icon = 'economy';
+        break;
+      case 'Staat und Politik':
+        icon = 'politic';
+        break;
+      case 'Energie und Kommunikation':
+        icon = 'energy';
+        break;
+    }
+
+    // add topic to array
+    var arr = new Array();
+    var index = $scope.topicActiveTopics.length;
+
+    arr = {
+      topic: topic,
+      indexCrumbs: $scope.topicIndexCrumbs,
+      iconClass: icon,
+      ctrlAction: 'viewTopic(' + index + ')'
+    };
+
+    if($scope.topicOpen >= 0) {
+      $scope.topicActiveTopics[$scope.topicOpen] = arr;
+    } else {
+      $scope.topicActiveTopics.push(arr);
+    }
+
+    $scope.viewTopic(index);
+
+    // add active class
+    //$('.active').removeClass('active');
+    //$('#group-left-2 .group a:nth-child(' + (index + 1) + ')').addClass('active');
+
+  }
+
+  $scope.viewTopic = function(index) {
+
+    $scope.topicOpen = index;
+    $scope.topicIndexCrumbs = $scope.topicActiveTopics[index]['indexCrumbs'];
+    //$scope.topicLastFlag = false;
+    $scope.navigateTopic(null);
 
   }
 
