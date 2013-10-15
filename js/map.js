@@ -5,10 +5,8 @@ var markerJa = false;
 
 USGSOverlay.prototype = new google.maps.OverlayView();
 
-<<<<<<< HEAD
 function initialize(overlayImageSrc) {
 
->>>>>>> 72290afb4ad75b7428e4b5f910e2ca0d70a0b1dd
 	var MY_MAPTYPE_ID = 'style';
 	var mapOptions = {
 			zoom: 9,
@@ -63,13 +61,7 @@ function initialize(overlayImageSrc) {
 	var swBound = new google.maps.LatLng(45.79817,5.957336);
 	var neBound = new google.maps.LatLng(47.796552,10.472717);
 	var bounds = new google.maps.LatLngBounds(swBound, neBound);
-	var srcImage = '/img/overlay/Scene1_Bildung.png';
-	var srcImage = '/img/overlay/Scene1_Grenzgaenger.png';
-	var srcImage = '/img/overlay/Scene2_SACHuetten.png';
-	var srcImage = '/img/overlay/Scene2_Wanderrouten.png';
-	var srcImage = '/img/overlay/Scene3_Egli.png';
-	var srcImage = '/img/overlay/Scene3_Waschbaer.png';
-<<<<<<< HEAD
+
 	if(overlayImageSrc != '') {
 		console.log(overlayImageSrc);
 		overlay = new USGSOverlay(bounds, overlayImageSrc, map);
@@ -101,7 +93,6 @@ function setAllMap(map) {
 	for (var i = 0; i < markers.length; i++) {
 		markers[i].setMap(map);
 	}
->>>>>>> 72290afb4ad75b7428e4b5f910e2ca0d70a0b1dd
 }
 
 // Deletes all markers in the array by removing references to them.
