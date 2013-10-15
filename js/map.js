@@ -1,10 +1,14 @@
 var overlay;
-	var map;
-	var markers = [];
-	var markerJa = false;
+var map;
+var markers = [];
+var markerJa = false;
+
 USGSOverlay.prototype = new google.maps.OverlayView();
 
+<<<<<<< HEAD
 function initialize(overlayImageSrc) {
+
+>>>>>>> 72290afb4ad75b7428e4b5f910e2ca0d70a0b1dd
 	var MY_MAPTYPE_ID = 'style';
 	var mapOptions = {
 			zoom: 9,
@@ -21,36 +25,41 @@ function initialize(overlayImageSrc) {
 			streetViewControl: false,
 			mapTypeControl: false
 	};
-	var featureOpts = [{
-			stylers: [{hue:'#00b4cc'}]
-		},
+	var featureOpts = [
 		{
+			stylers: [{hue:'#00b4cc'}]
+	  },{
 		featureType: "all",
 		elementType: "labels",
-			stylers: [{ visibility: 'off' }]
-		}
+		stylers: [
+			{ visibility: 'off' }
+		]
+	  },{
+		featureType: "water",
+		elementType: "all",
+		stylers: [
+			{ hue:'#00b4cc' },
+			{ saturation: 40 },
+			{ lightness: 40 }
+		]
+	  }
 	];
+
 	var styledMapOptions = {
 		name: 'style'
 	};
-	
+
 	map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-	
 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
-	google.maps.event.addListener(map, 'click', function(event) {
-		addMarker(event.latLng);
-	});
-
-	/*
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(47.141161,8.775616),
 		map: map,
 		title: 'Atlas der Schweiz',
 		icon: '/img/overlay/map_marker.png'
-	}); 
-	*/
+	});
+
 	var swBound = new google.maps.LatLng(45.79817,5.957336);
 	var neBound = new google.maps.LatLng(47.796552,10.472717);
 	var bounds = new google.maps.LatLngBounds(swBound, neBound);
@@ -60,13 +69,48 @@ function initialize(overlayImageSrc) {
 	var srcImage = '/img/overlay/Scene2_Wanderrouten.png';
 	var srcImage = '/img/overlay/Scene3_Egli.png';
 	var srcImage = '/img/overlay/Scene3_Waschbaer.png';
+<<<<<<< HEAD
 	if(overlayImageSrc != '') {
 		console.log(overlayImageSrc);
 		overlay = new USGSOverlay(bounds, overlayImageSrc, map);
 	}
-	
+
+	google.maps.event.addListener(map, 'touchstart', function(event) {
+		addMarker(event.latLng);
+	});
+
 }
-/** @constructor */
+function addMarker(location) {
+	markerJa =! markerJa;
+	console.log(markerJa);
+
+	deleteMarkers();
+	if (markerJa == true){
+		console.log(location.lb, location.mb);
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map,
+			icon: '/img/overlay/map_marker.png'
+		});
+		markers.push(marker);
+	}
+}
+
+// Sets the map on all markers in the array.
+function setAllMap(map) {
+	for (var i = 0; i < markers.length; i++) {
+		markers[i].setMap(map);
+	}
+>>>>>>> 72290afb4ad75b7428e4b5f910e2ca0d70a0b1dd
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+	setAllMap(null);
+	markers = [];
+}
+
+
 function USGSOverlay(bounds, image, map) {
 	// Now initialize all properties.
 	this.bounds_ = bounds;
@@ -83,8 +127,8 @@ function USGSOverlay(bounds, image, map) {
  * onAdd is called when the map's panes are ready and the overlay has been
  * added to the map.
  */
+
 USGSOverlay.prototype.onAdd = function() {
-	
 	var div = document.createElement('div');
 	div.style.border = 'none';
 	div.style.borderWidth = '0px';
@@ -141,32 +185,3 @@ USGSOverlay.prototype.toggle = function() {
 		}
 	}
 };
-
-function addMarker(location) {
-	markerJa =! markerJa;
-	console.log(markerJa);
-
-	deleteMarkers();
-	if (markerJa == true){
-		console.log(location.lb, location.mb);
-		var marker = new google.maps.Marker({
-			position: location,
-			map: map,
-			icon: '/img/overlay/map_marker.png'
-		});
-		markers.push(marker);
-	}
-}
-
-// Sets the map on all markers in the array.
-function setAllMap(map) {
-	for (var i = 0; i < markers.length; i++) {
-		markers[i].setMap(map);
-	}
-}
-
-// Deletes all markers in the array by removing references to them.
-function deleteMarkers() {
-	setAllMap(null);
-	markers = [];
-}
