@@ -15,16 +15,16 @@
 		</ul>
 	</ul>
 	<ul>
-		<li><a class="project-overview" href="/">Projektübersicht</a></li>
-		<li><a class="settings" href="/settings">Einstellungen</a></li>
-		<li><a class="help" href="/help">Hilfe</a></li>
-		<li><a class="intro" href="/intro">Kurzeinführung</a></li>
-		<li><a class="impress" href="/impress">Impressum</a></li>
+		<li><a class="project-overview" href="#/">Projektübersicht</a></li>
+		<li><a class="settings" href="#/settings">Einstellungen</a></li>
+		<li><a class="help" href="#/help">Hilfe</a></li>
+		<li><a class="intro" href="#/intro">Kurzeinführung</a></li>
+		<li><a class="impress" href="#/impress">Impressum</a></li>
 	</ul>
 </div>
 
 <div id="back">
-	<a href="/"><img src="/img/icon-09.png" id="button_back"></a>
+	<a href="#/"><img src="/img/icon-09.png" id="button_back"></a>
 	<h1>{{title}}</h1>
 	<div class="clear"></div>
 </div>
@@ -36,9 +36,9 @@
 <div id = "start_options">
 	<ul>
 		<li>
-			<a href="/map"><img src="/img/icon-19.png" class="diashow_button"></a>
-			<a href="/map"><img src="/img/icon-20.png" class="edit_button"></a>
-			<a href="/map"><img src="/img/icon-21.png" class="add_button"></a>
+			<a href="#/map"><img src="/img/icon-19.png" class="diashow_button"></a>
+			<a href="#/map"><img src="/img/icon-20.png" class="edit_button"></a>
+			<a href="#/map"><img src="/img/icon-21.png" class="add_button"></a>
 		</li>
 	</ul>
 </div>
@@ -47,9 +47,9 @@
 	<div id= "scroller">
 		<ul>
 			<li ng-repeat="map in maps">
-				<a href="/map"><img ng-src="{{map.image}}"></a>
+				<a href="#/map"><img ng-src="{{map.image}}"></a>
 				<!--<a href="projects/{{project.name}}/map/{{map.name}}">{{map.name}}</a>-->
-				<a href="/map">{{map.name}}</a>
+				<a href="#/map">{{map.name}}</a>
 			</li>
 		</ul>
 	</div>

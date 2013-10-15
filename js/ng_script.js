@@ -72,7 +72,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
   function($scope, $routeParams, $http, $templateCache) {
 
     // outsourced functionality
-    
+    navigationControl();
     initialize('');
 
 
@@ -245,8 +245,19 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
 
 
-    $scope.search = function() {
-      $scope.image = 'img/map_suche.png';
+    $scope.search = function(imgNum) {
+
+      console.log(imgNum);
+
+      if(imgNum == 'zwei') {
+        console.log('juhuu!');
+        //$scope.blaa = null;
+        $scope.image = 'img/map_suche.png';
+      } else {
+        $scope.blaa = 'zwei';
+        $scope.image = 'img/map_suche_empty.png';
+      }
+      
     };
 
     $scope.legend = function() {
@@ -257,7 +268,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
       $scope.image = 'img/map_basiskartenoptionen.png';
     };
 
-    navigationControl();
+
 
 }]);
 
