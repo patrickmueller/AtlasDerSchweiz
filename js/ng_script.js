@@ -251,10 +251,10 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
       if(imgNum == 'zwei') {
         console.log('juhuu!');
-        //$scope.blaa = null;
+        $scope.action = null;
         $scope.image = 'img/map_suche.png';
       } else {
-        $scope.blaa = 'zwei';
+        $scope.action = 'zwei';
         $scope.image = 'img/map_suche_empty.png';
       }
       
