@@ -25,7 +25,7 @@ atlasApp.config(['$routeProvider',
     $routeProvider.when('/', {
       //templateUrl: 'home.html',
       templateUrl: 'map.html',
-      //controller: MainCntl,
+      //controller: 'MainCntl',
       controller: 'MapCntl'
     });
 
@@ -138,6 +138,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
               actionIsComing = true;
           
         };
+
         $scope.topicList = thisTopic;
         $scope.topicBackIcon = 'back';
 
