@@ -102,6 +102,9 @@ atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
 
     var pressTimer;
 
+    /***************************************************************************************************
+      * funktioniert vielleicht nicht mehr wegen fastclick.js!!!!!!!!!!!!!                                          ACHTUNGACHTUNG
+      **************************************************************************************************/
     $(document).on('mouseup', '.button-touch', function() {
       clearTimeout(pressTimer);
       $(document).on('click', '.button', menuControl);
@@ -167,10 +170,15 @@ atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
         for (var i = 0; i <= length - 1; i++) {
 
             if(actionIsComing) {
+              for (var j = 0; j < thisTopic.length; j++) {
+                thisTopic[j]['class'] = '';
+              }
+
               if(index != null) {
                 $scope.addTopic(index);
               } else {
                 thisTopic[x[i]]['class'] = 'selected';
+                $scope.topicIndexCrumbs.pop();
               }
               break;
             }
