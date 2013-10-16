@@ -51,12 +51,14 @@ function initialize(overlayImageSrc) {
 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
+	/*
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(47.141161,8.775616),
 		map: map,
 		title: 'Atlas der Schweiz',
 		icon: '/img/overlay/map_marker.png'
 	});
+*/
 
 	var swBound = new google.maps.LatLng(45.79817,5.957336);
 	var neBound = new google.maps.LatLng(47.796552,10.472717);
@@ -68,15 +70,14 @@ function initialize(overlayImageSrc) {
 		};
 	}
 
-	google.maps.event.addListener(map, 'touchstart', function(event) {
+	google.maps.event.addListener(map, 'click', function(event) {
+		consle.log('asdasd');
 		addMarker(event.latLng);
 	});
 
 }
 function addMarker(location) {
-	markerJa =! markerJa;
-	console.log(markerJa);
-
+	
 	deleteMarkers();
 	if (markerJa == true){
 		console.log(location.lb, location.mb);

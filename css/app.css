@@ -298,10 +298,8 @@ html, body {
 	width: 342px;
 }
 
-.topic-list {
-	
-}
 
+/*
 .topic-list.ng-enter,
 .topic-list.ng-leave,
 .topic-list.ng-move {
@@ -328,7 +326,7 @@ html, body {
 .topic-list.ng-leave.ng-leave-active {
 	margin-left: -330px !important;
 }
-
+*/
 
 
 
@@ -349,14 +347,37 @@ html, body {
 	background-size: auto 172px;
 }
 
-
-
-
-
 @media screen and (orientation:portrait) {
 	
 	#toolbox-menu {
 		background-image: url('/img/map_toolbox_portrait.png');
 	}
 
+}
+
+
+
+/*  MAP NAVIGATION  */
+#map-nav-menu {
+	position: absolute;
+	width: 96px;
+	top: 30px;
+	right: 78px;
+}
+
+.map-nav-button {
+	width: 48px;
+	height: 50px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;
+}
+
+.map-nav-button.gonorth {
+	background-image: url('/img/icon-31.png');
+}
+
+.map-nav-button.goswiss {
+	background-image: url('/img/icon-32.png');
 }

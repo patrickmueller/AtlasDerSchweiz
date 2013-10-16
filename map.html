@@ -18,7 +18,7 @@
 
 <div id="main-menu" class="menu">
 	<ul>
-		<li class="selected"><a class="back" href="#">Alpenpanorama</a></li>
+		<li class="selected"><a class="back" href="#/projects/Alpenpanorama">Alpenpanorama</a></li>
 		<ul>
 			<li><a href="#">Als neue Karte speichern</a></li>
 			<li><a href="#">Karte zurücksetzen</a></li>
@@ -27,16 +27,16 @@
 	<ul>
 		<li><a class="map" href="#">Karten aus dem Projekt</a></li>
 		<ul>
-			<li><a href="#">Matterhorn</a></li>
-			<li><a href="#">Matterhorn</a></li>
+			<li><a href="#/map">Matterhorn</a></li>
+			<li><a href="#/map">Matterhorn</a></li>
 		</ul>
 	</ul>
 	<ul>
-		<li><a class="project-overview" href="/">Projektübersicht</a></li>
-		<li><a class="settings" href="/settings">Einstellungen</a></li>
-		<li><a class="help" href="/help">Hilfe</a></li>
-		<li><a class="intro" href="/intro">Kurzeinführung</a></li>
-		<li><a class="impress" href="/impress">Impressum</a></li>
+		<li><a class="project-overview" href="#/">Projektübersicht</a></li>
+		<li><a class="settings" href="#/settings">Einstellungen</a></li>
+		<li><a class="help" href="#/help">Hilfe</a></li>
+		<li><a class="intro" href="#/intro">Kurzeinführung</a></li>
+		<li><a class="impress" href="#/impress">Impressum</a></li>
 	</ul>
 </div>
 <div id="main-menu-shadow" class="shadow"></div>
@@ -78,6 +78,14 @@
 	<img ng-repeat="image in images" src="{{image}}" alt="">
 </div>
 <div id="option-menu-shadow" class="shadow"></div>
+
+
+
+
+<div id="map-nav-menu">
+	<div class="map-nav-button gonorth"></div>
+	<div class="map-nav-button goswiss"></div>
+</div>
 
 
 

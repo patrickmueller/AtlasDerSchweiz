@@ -1,13 +1,13 @@
 function navigationControl() {
 
+	$(document).off('click', '.button', menuControl);
 	$(document).on('click', '.button', menuControl);
 	$('#map_canvas').click(menuControl);
 
+	
 };
 
 function menuControl() {
-
-	console.log('click');
 
 	if($(this).attr('id') == 'map_canvas') {
 		closeMenu();

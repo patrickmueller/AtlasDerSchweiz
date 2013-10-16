@@ -63,8 +63,8 @@ atlasControllers.controller('ProjectCntl', ['$scope', '$routeParams',
       {'name': 'Bodensee',
        'image': '/img/start/map_02.png'}
     ];
-    navigationControl();
     $scope.title = $routeParams['projectId'];
+    navigationControl();
 }]);
 
 
@@ -73,8 +73,30 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
     // outsourced functionality
     navigationControl();
-    touchControl();
     initialize('');
+
+
+    var pressTimer;
+
+    $(document).on('mouseup', '.button-touch', function() {
+      clearTimeout(pressTimer);
+      $(document).on('click', '.button', menuControl);
+      // Clear timeout
+      return false;
+    });
+
+    $(document).on('mousedown', '.button-touch', function() {
+      // Set timeout
+      pressTimer = window.setTimeout(function() { 
+        alert('Yes, I recognized a long tap!');
+        $(document).off('click', '.button', menuControl);
+      }, 
+      1000)
+      return false; 
+    });
+
+
+
 
 
     // model data
