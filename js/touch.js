@@ -5,3 +5,8 @@ function touchControl() {
 	});
 
 };
+
+// instant click on mobile touchstart event
+window.addEventListener('load', function() {
+	FastClick.attach(document.body);
+}, false);
