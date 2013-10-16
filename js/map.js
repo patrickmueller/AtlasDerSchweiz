@@ -17,7 +17,7 @@ function initialize(overlayImageSrc) {
 			mapTypeId: MY_MAPTYPE_ID,
 			draggable: true,
 			scrollwheel: true,
-			panControl: false,
+			//panControl: false,
 			zoomControl: false,
 			scaleControl: false,
 			streetViewControl: false,

@@ -15,7 +15,6 @@ p {
 #title{
 	margin: 15px;
 	padding-top: 110px
-
 }
 
 #logo img{
@@ -81,6 +80,7 @@ p {
 #back #button_back{
 	float: left;
 	margin-left: -24px;
+	margin-bottom: -20px;
 }
 
 
