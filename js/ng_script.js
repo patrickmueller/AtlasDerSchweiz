@@ -92,8 +92,8 @@ atlasControllers.controller('Project2Cntl', ['$scope',
 }]);
 
 
-atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
-  function($scope, $routeParams, $http, $templateCache) {
+atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
+  function($scope, $sce, $routeParams, $http, $templateCache) {
 
     // outsourced functionality
     navigationControl();
@@ -136,6 +136,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
     $scope.topicAction = 'navigateTopic';
     $scope.topicBackIcon = '';
     $scope.topicActiveTopics = new Array();
+    $scope.searchImgIndex = 0;
     
     $.getJSON('/json/topics.json', function(json) {
         console.log(json);
@@ -300,22 +301,19 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
 
 
-    $scope.search = function(imgNum) {
+    $scope.search = function(stat) {
 
-      $scope.images = new Array();
-
-      if(imgNum == 'zwei') {
-        console.log('juhuu!');
-        $scope.action = null;
-        $scope.images[0] = 'img/map_suche.png';
+      if(stat == 2) {
+        $scope.optenMenuValue = 'search2';
       } else {
-        $scope.action = 'zwei';
-        $scope.images[0] = 'img/map_suche_empty.png';
+        $scope.optenMenuValue = 'search1';
       }
       
     };
 
     $scope.legend = function() {
+
+      $scope.optenMenuValue = 'legend';
 
       var topics = $scope.topicActiveTopics;
       $scope.images = new Array();
@@ -330,8 +328,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
     };
 
     $scope.options = function() {
-      $scope.images = new Array();
-      $scope.images[0] = 'img/map_basiskartenoptionen.png';
+      $scope.optenMenuValue = 'options';
     };
 
 

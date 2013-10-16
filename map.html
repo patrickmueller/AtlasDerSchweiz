@@ -75,8 +75,13 @@
 	</div>
 </div>
 
-<div id="option-menu" class="menu">
-	<img ng-repeat="image in images" src="{{image}}" alt="">
+<div ng-switch on="optenMenuValue" id="option-menu" class="menu">
+	<img ng-switch-when="search1" ng-click="search(2)" src="img/map_suche_empty.png" alt="" />
+	<img ng-switch-when="search2" ng-click="search(3)" src="img/map_suche.png" alt="" />
+	<div ng-switch-when="legend">
+		<img ng-repeat="image in images" src="{{image}}" alt="">
+	</div>
+	<img ng-switch-when="options" src="img/map_basiskartenoptionen.png" alt="">
 </div>
 <div id="option-menu-shadow" class="shadow"></div>
 
