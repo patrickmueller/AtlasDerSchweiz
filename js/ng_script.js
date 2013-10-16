@@ -45,7 +45,7 @@ atlasControllers.controller('MainCntl', ['$scope', '$routeParams',
     {'name': 'Alpenpanorama',
      'image': 'img/start/projektuebersicht-03.png'},
     {'name': 'Baumbestände',
-     'image': 'img/start/projektuebersicht-02.png'}
+     'image': 'img/start/projektuebersicht-04.png'}
   ];
   navigationControl();
 }]);
@@ -56,12 +56,12 @@ atlasControllers.controller('ProjectCntl', ['$scope', '$routeParams',
     console.log($routeParams);
     $scope.maps = [
       {'title': 'Kartenübersicht',
-        'name': 'Map 1',
+        'name': 'Walensee',
+       'image': '/img/start/map_03.png'},
+      {'name': 'Vierwaldstättersee',
        'image': '/img/start/map_01.png'},
-      {'name': 'Map 2',
-       'image': '/img/start/map_02.png'},
-      {'name': 'Map 3',
-       'image': '/img/start/map_03.png'}
+      {'name': 'Bodensee',
+       'image': '/img/start/map_02.png'}
     ];
     navigationControl();
     $scope.title = $routeParams['projectId'];
