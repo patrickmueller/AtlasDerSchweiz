@@ -61,6 +61,11 @@ a.button {
 	border-top: 1px #4c4c4c solid;
 }
 
+.group.negative .button:first-child:after {
+	border-top: none;
+}
+
+
 
 
 

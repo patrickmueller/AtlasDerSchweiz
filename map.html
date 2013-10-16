@@ -46,7 +46,7 @@
 
 <div id="group-left-2"  data-alignment="left" class="">
 	<div class="group negative ">
-		<a ng-repeat="topic in topicActiveTopics" ng-click="{{topic.ctrlAction}}" id="button" data-menu-id="topic-menu" href="" class="button {{topic.iconClass}}"></a>
+		<a ng-repeat="topic in topicActiveTopics" ng-click="{{topic.ctrlAction}}" id="button" data-menu-id="topic-menu" href="" class="button {{topic.iconClass}} button-touch"></a>
 		<a ng-click="newTopic()" id="button" data-menu-id="topic-menu" href="" class="button add"></a>
 	</div>
 </div>
@@ -75,7 +75,7 @@
 </div>
 
 <div id="option-menu" class="menu">
-	<img ng-click="search('{{action}}')" src="{{image}}" alt="">
+	<img ng-repeat="image in images" src="{{image}}" alt="">
 </div>
 <div id="option-menu-shadow" class="shadow"></div>
 

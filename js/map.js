@@ -1,4 +1,4 @@
-var overlay;
+var overlay = new Array();
 var map;
 var markers = [];
 var markerJa = false;
@@ -62,9 +62,10 @@ function initialize(overlayImageSrc) {
 	var neBound = new google.maps.LatLng(47.796552,10.472717);
 	var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
-	if(overlayImageSrc != '') {
-		console.log(overlayImageSrc);
-		overlay = new USGSOverlay(bounds, overlayImageSrc, map);
+	if(overlayImageSrc.length > 0) {
+		for (var i = 0; i < overlayImageSrc.length ; i++) {
+			overlay[i] = new USGSOverlay(bounds, overlayImageSrc[i], map);
+		};
 	}
 
 	google.maps.event.addListener(map, 'touchstart', function(event) {

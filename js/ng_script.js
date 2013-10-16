@@ -73,6 +73,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
     // outsourced functionality
     navigationControl();
+    touchControl();
     initialize('');
 
 
@@ -173,6 +174,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
       // get topic
       var topic = $scope.topicList[index]['name'];
       var overlay = $scope.topicList[index]['overlay'];
+      var legend = $scope.topicList[index]['legend'];
 
       // get topic icon
       var icon;
@@ -210,7 +212,8 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
         indexCrumbs: $scope.topicIndexCrumbs,
         iconClass: icon,
         ctrlAction: 'viewTopic(' + index + ')',
-        overlay: overlay
+        overlay: overlay,
+        legend: legend
       };
 
       if($scope.topicOpen != null) {
@@ -238,8 +241,14 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
     $scope.loadOverlay = function(index) {
 
-      var overlay = $scope.topicActiveTopics[index]['overlay'];
-      initialize(overlay);
+      var topics = $scope.topicActiveTopics;
+      var overlays = new Array();
+
+      angular.forEach(topics, function(topic) {
+        if(topic.overlay) overlays.push(topic.overlay);
+      });
+
+      initialize(overlays);
 
     }
 
@@ -247,25 +256,36 @@ atlasControllers.controller('MapCntl', ['$scope', '$routeParams',
 
     $scope.search = function(imgNum) {
 
-      console.log(imgNum);
+      $scope.images = new Array();
 
       if(imgNum == 'zwei') {
         console.log('juhuu!');
         $scope.action = null;
-        $scope.image = 'img/map_suche.png';
+        $scope.images[0] = 'img/map_suche.png';
       } else {
         $scope.action = 'zwei';
-        $scope.image = 'img/map_suche_empty.png';
+        $scope.images[0] = 'img/map_suche_empty.png';
       }
       
     };
 
     $scope.legend = function() {
-      $scope.image = 'img/map_legende.png';
+
+      var topics = $scope.topicActiveTopics;
+      $scope.images = new Array();
+      $scope.images.push('/img/legenden/titel.png');
+
+      angular.forEach(topics, function(topic) {
+        if(topic.legend) $scope.images.push(topic.legend);
+      });
+
+      $scope.images.push('/img/legenden/standort.png');
+
     };
 
     $scope.options = function() {
-      $scope.image = 'img/map_basiskartenoptionen.png';
+      $scope.images = new Array();
+      $scope.images[0] = 'img/map_basiskartenoptionen.png';
     };
 
 
