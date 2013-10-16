@@ -71,7 +71,7 @@ function initialize(overlayImageSrc) {
 	}
 
 	google.maps.event.addListener(map, 'click', function(event) {
-		consle.log('asdasd');
+		console.log('asdasd');
 		addMarker(event.latLng);
 	});
 
