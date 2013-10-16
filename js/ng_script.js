@@ -170,9 +170,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
               if(index != null) {
                 $scope.addTopic(index);
               } else {
-                var tmp = thisTopic;
-                tmp[x[i]]['class'] = 'selected';
-                thisTopic = tmp;
+                thisTopic[x[i]]['class'] = 'selected';
               }
               break;
             }
