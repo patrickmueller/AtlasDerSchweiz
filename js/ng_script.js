@@ -13,6 +13,11 @@ atlasApp.config(['$routeProvider',
       controller: 'ProjectCntl',
     });
 
+    $routeProvider.when('/projects2', {
+      templateUrl: '/project.html',
+      controller: 'Project2Cntl',
+    });
+
     $routeProvider.when('/projects/:projectId/map/:mapId', {
       templateUrl: 'map.html',
       controller: 'MapCntl'
@@ -65,6 +70,25 @@ atlasControllers.controller('ProjectCntl', ['$scope', '$routeParams',
     ];
     $scope.title = $routeParams['projectId'];
     navigationControl();
+}]);
+
+
+atlasControllers.controller('Project2Cntl', ['$scope',
+  function($scope) {
+
+    $scope.maps = [
+      {'title': 'Kartenübersicht',
+        'name': 'Erwerbstätigkeit Frauen',
+       'image': '/img/start/journi_01.png'},
+      {'name': 'Pendler und Arbeitslosigkeit',
+       'image': '/img/start/journi_02.png'},
+      {'name': 'Auslender arbeitslos',
+       'image': '/img/start/journi_03.png'}
+    ];
+
+    $scope.title = 'Bildung an der Grenze';
+    navigationControl();
+
 }]);
 
 
