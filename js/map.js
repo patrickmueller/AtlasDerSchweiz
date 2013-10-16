@@ -17,7 +17,7 @@ function initialize(overlayImageSrc) {
 			mapTypeId: MY_MAPTYPE_ID,
 			draggable: true,
 			scrollwheel: true,
-			//panControl: false,
+			panControl: false,
 			zoomControl: false,
 			scaleControl: false,
 			streetViewControl: false,
@@ -73,6 +73,12 @@ function initialize(overlayImageSrc) {
 	google.maps.event.addListener(map, 'click', function(event) {
 		console.log('asdasd');
 		addMarker(event.latLng);
+	});
+
+	$( ".goswiss" ).click(function() {
+		var center = new google.maps.LatLng(46.944637, 8.745117);
+		map.panTo(center),
+		map.setZoom(9)
 	});
 
 }
