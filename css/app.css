@@ -239,6 +239,13 @@ html, body {
 
 
 /*  TOPIC MENU  */
+
+#topic-menu .scroller{
+	height:768px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
 #topic-menu,
 #topic-menu-shadow {
 	position: absolute;
@@ -263,6 +270,7 @@ html, body {
 #topic-menu .selected a {
 	color: #20a2bd;
 }
+
 
 #topic-menu ul,
 #topic-menu li {

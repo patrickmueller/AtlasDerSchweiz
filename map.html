@@ -56,15 +56,16 @@
 	<h2 class="negative">
 		<a ng-click="navigateTopicBack()" href="" class="{{topicBackIcon}}">{{topicTitle}}</a>
 	</h2>
-	<ul>
-		<li ng-repeat="elements in topicList" class="negative {{elements.class}} topic-list">
-			<a ng-click="navigateTopic({{$index}})" href="" class="{{elements.icon}}">{{elements.name}}</a>
-		</li>
-	</ul>
+
+	<div class="scroller">
+		<ul>
+			<li ng-repeat="elements in topicList" class="negative {{elements.class}} topic-list">
+				<a ng-click="navigateTopic({{$index}})" href="" class="{{elements.icon}}">{{elements.name}}</a>
+			</li>
+		</ul>
+	</div>
 </div>
 <div id="topic-menu-shadow" class="shadow"></div>
-
-
 
 
 <div id="group-right" data-alignment="right">
