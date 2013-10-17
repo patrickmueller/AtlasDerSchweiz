@@ -5,7 +5,7 @@ var markerJa = false;
 
 USGSOverlay.prototype = new google.maps.OverlayView();
 
-function initialize(overlayImageSrc) {
+function initialize() {
 
 	var MY_MAPTYPE_ID = 'style';
 	var mapOptions = {
@@ -51,31 +51,14 @@ function initialize(overlayImageSrc) {
 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
-	var marker = new google.maps.Marker({
-		position: new google.maps.LatLng(47.141161,8.775616),
-		map: map,
-		title: 'Atlas der Schweiz',
-		icon: {
-			url: '/img/overlay/map_marker.png',
-			scaledSize: new google.maps.Size(205, 112)
-		},
-		optimized: false
-	});
+	
 
-	var swBound = new google.maps.LatLng(45.79817,5.957336);
-	var neBound = new google.maps.LatLng(47.796552,10.472717);
-	var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
-	if(overlayImageSrc.length > 0) {
-		for (var i = 0; i < overlayImageSrc.length ; i++) {
-			overlay[i] = new USGSOverlay(bounds, overlayImageSrc[i], map);
-		};
-	}
-
+	/*
 	google.maps.event.addListener(map, 'click', function(event) {
-		console.log('asdasd');
 		addMarker(event.latLng);
 	});
+*/
 
 	$( ".goswiss" ).click(function() {
 		var center = new google.maps.LatLng(46.944637, 8.745117);
@@ -83,18 +66,34 @@ function initialize(overlayImageSrc) {
 		map.setZoom(9)
 	});
 }
+
+function addSearchMarker() {
+
+	addMarker(new google.maps.LatLng(47.141161,8.775616));
+
+}
+
 function addMarker(location) {
 	
 	deleteMarkers();
-	if (markerJa == true){
-		console.log(location.lb, location.mb);
-		var marker = new google.maps.Marker({
-			position: location,
-			map: map,
-			icon: '/img/overlay/map_marker.png'
-		});
-		markers.push(marker);
-	}
+	var marker = new google.maps.Marker({
+		position: location,
+		map: map,
+		icon: {
+			url: '/img/overlay/map_marker.png',
+			scaledSize: new google.maps.Size(205, 112)
+		},
+		optimized: false
+	});
+
+	markers.push(marker);
+	var index = marker.length;
+	google.maps.event.addListener(marker, 'click', function(point, index) { 
+		deleteMarkers();
+	});
+
+	map.panTo(location);
+
 }
 
 // Sets the map on all markers in the array.
@@ -108,6 +107,19 @@ function setAllMap(map) {
 function deleteMarkers() {
 	setAllMap(null);
 	markers = [];
+}
+
+
+function mapSetOverlay(overlayImageSrc) {
+	var swBound = new google.maps.LatLng(45.79817,5.957336);
+	var neBound = new google.maps.LatLng(47.796552,10.472717);
+	var bounds = new google.maps.LatLngBounds(swBound, neBound);
+
+	if(overlayImageSrc.length > 0) {
+		for (var i = 0; i < overlayImageSrc.length ; i++) {
+			overlay[i] = new USGSOverlay(bounds, overlayImageSrc[i], map);
+		};
+	}
 }
 
 

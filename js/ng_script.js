@@ -301,7 +301,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
         if(topic.overlay) overlays.push(topic.overlay);
       });
 
-      initialize(overlays);
+      mapSetOverlay(overlays);
 
     }
 
@@ -310,6 +310,9 @@ atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
     $scope.search = function(stat) {
 
       if(stat == 2) {
+        $scope.optenMenuValue = 'search2';
+      } else if(stat == 3) {
+        addSearchMarker();
         $scope.optenMenuValue = 'search2';
       } else {
         $scope.optenMenuValue = 'search1';
