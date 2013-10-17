@@ -220,6 +220,9 @@ html, body {
 
 
 
+
+
+
 /*  OPTION MENU  */
 #option-menu,
 #option-menu-shadow {
@@ -233,13 +236,15 @@ html, body {
 	width: 342px;
 }
 
-
+#main-menu{
+	height:auto;
+}
 
 
 
 
 /*  TOPIC MENU  */
-
+#main-menu .scroller,
 #topic-menu .scroller{
 	height:768px;
 	overflow-y: scroll;
