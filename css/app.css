@@ -355,15 +355,6 @@ html, body {
 	background-size: auto 172px;
 }
 
-@media screen and (orientation:portrait) {
-	
-	#toolbox-menu {
-		background-image: url('/img/map_toolbox_portrait.png');
-	}
-
-}
-
-
 
 /*  MAP NAVIGATION  */
 #map-nav-menu {
@@ -388,4 +379,18 @@ html, body {
 
 .map-nav-button.goswiss {
 	background-image: url('/img/icon-32.png');
+}
+
+
+/* MEDIA QUERIES*/
+
+@media screen and (orientation:portrait) {
+	
+	#toolbox-menu {
+		background-image: url('/img/map_toolbox_portrait.png');
+	}
+
+	#topic-menu .scroller{
+	height:1024px;
+	}
 }

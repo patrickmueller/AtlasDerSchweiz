@@ -3,6 +3,7 @@ h1 {
 	font-weight: 300;
 }
 
+
 p {
 	font-size: 18;
 	font-weight: 300;
@@ -14,7 +15,8 @@ p {
 
 #title{
 	margin: 15px;
-	padding-top: 110px
+	padding-top: 110px;
+	padding-left:25px;
 }
 
 #logo img{
@@ -25,7 +27,7 @@ p {
 
 }
 #items{
-	top: 250px;
+	margin-top: -27px;
 	left: 15px;
 	display: block;
 	width: 1024px;
@@ -72,17 +74,25 @@ p {
 }
 
 #back {
-	padding-top:110px;
-	padding-left: 15px;
-	margin: 15px;
+	padding-top:97px;
+	padding-left: 34px;
+	margin-bottom: 50px;
 }
 
-#back #button_back{
-	float: left;
-	margin-left: -24px;
-	margin-bottom: -20px;
+#back a{
+	display: block;
+	width: 500px;
+	text-decoration: none;
+	color: black;
 }
 
+.back-button {
+	background-image: url(/img/icon-back.png);
+	background-repeat: no-repeat;
+	background-position: -30px -20px;
+	background-size: 90px;
+	padding-left: 50px;
+}
 
 #start_options {
 	width:200px;
@@ -133,3 +143,17 @@ p {
 	padding-left: 45px;
 }
 */
+
+
+/*  MEDIA QUERIES */
+
+@media screen and (orientation:portrait) {
+	#items{
+		width: 768px;
+	}
+
+	#back{
+		margin-bottom: 100px;
+	}
+
+}
