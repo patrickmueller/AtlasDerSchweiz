@@ -277,6 +277,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
 
       $scope.viewTopic(index);
       $scope.loadOverlay(index);
+      closeMenu($('#group-left-2 .button'));
 
       // add active class
       $('.active').removeClass('active');
@@ -312,6 +313,7 @@ atlasControllers.controller('MapCntl', ['$scope', '$sce', '$routeParams',
       if(stat == 2) {
         $scope.optenMenuValue = 'search2';
       } else if(stat == 3) {
+        closeMenu($('#group-right .button'));
         addSearchMarker();
         $scope.optenMenuValue = 'search2';
       } else {
