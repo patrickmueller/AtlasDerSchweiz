@@ -76,6 +76,12 @@ html, body {
 	z-index: 100;
 }
 
+.menu .scroller{
+	height:768px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
 .shadow {
 	width: 342px;
 	height: 100%;
@@ -180,18 +186,18 @@ html, body {
 
 #main-menu ul {
 	border-bottom: 1px solid #ccc;
-	margin: 0px 15px 25px 0px;
+	margin: 0px 15px 25px 15px;
 	padding-bottom: 20px;
 }
 
 #main-menu ul:last-child {
 	border: none;
-	padding-bottom: 0;
+	padding-bottom: 50px;
 }
 
 #main-menu ul ul {
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
 	border: none;
 }
 
@@ -239,13 +245,6 @@ html, body {
 
 
 /*  TOPIC MENU  */
-
-#topic-menu .scroller{
-	height:768px;
-	overflow-y: scroll;
-	overflow-x: hidden;
-}
-
 #topic-menu,
 #topic-menu-shadow {
 	position: absolute;
@@ -390,7 +389,7 @@ html, body {
 		background-image: url('/img/map_toolbox_portrait.png');
 	}
 
-	#topic-menu .scroller{
+	.menu .scroller{
 	height:1024px;
 	}
 }
