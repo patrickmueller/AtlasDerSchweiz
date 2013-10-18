@@ -226,6 +226,9 @@ html, body {
 
 
 
+
+
+
 /*  OPTION MENU  */
 #option-menu,
 #option-menu-shadow {
@@ -239,7 +242,9 @@ html, body {
 	width: 342px;
 }
 
-
+#main-menu{
+	height:auto;
+}
 
 
 
@@ -390,6 +395,6 @@ html, body {
 	}
 
 	.menu .scroller{
-	height:1024px;
+		height:1024px;
 	}
 }
